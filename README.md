@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Links
 
-## Available Scripts
+- [https://github.com/JAndrzGutierrez/Projecto2]()
+- [add your deployment link]()
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+I will be creating a weather app using the following API [https://www.weatherapi.com/] were the user will get information about current weather, forecast, location and local time, temperature etc. This will be the Ultron of my project 1. I will be using CSS/reactJS. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+https://www.weatherapi.com/docs/
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+{data: weatherData current:
+cloud: 100
+condition: {text: 'Overcast', icon: '//cdn.weatherapi.com/weather/64x64/day/122.png', code: 1009}
+feelslike_c: -4.6
+feelslike_f: 23.8
+gust_kph: 18.4
+gust_mph: 11.4
+humidity: 54
+is_day: 1
+last_updated: "2022-02-14 12:00"
+last_updated_epoch: 1644858000
+precip_in: 0
+precip_mm: 0
+pressure_in: 30.27
+pressure_mb: 1025
+temp_c: 0
+temp_f: 32
+uv: 1
+vis_km: 16
+vis_miles: 9
+wind_degree: 330
+wind_dir: "NNW"
+wind_kph: 16.9
+wind_mph: 10.5 }
+```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Wireframes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- WireFrame[https://wireframepro.mockflow.com/view/juanandresgutierrez]()
+- React Arch[https://drive.google.com/file/d/1RrzwKhgy7J2tuIbpRmGCUQJXaUqMmnao/view?usp=sharing]()
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### MVP/PostMVP - 5min
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### MVP EXAMPLE
+- 3rd Party API
+- Display Useful Weather Information.
+- Allow user to search the forecast in diffent cities.
+- Basic Styling and layout.
+- Routes 2 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### PostMVP EXAMPLE
+-Animation 
+- Advance Styling 
 
-## Learn More
+## Components
+##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Component | Description | 
+| --- | :---: |  
+| App | This will make the initial data pull and include React Router| 
+| Header | This will render the header include the nav | 
+| Footer | This will render the header include the nav | 
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
-### Analyzing the Bundle Size
+| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
+| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
+| Total | H | 6hrs| 5hrs | 5hrs |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Additional Libraries
+ Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
 
-### Making a Progressive Web App
+## Code Snippet
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+function reverse(string) {
+	// here is the code to reverse a string of text
+}
+```
