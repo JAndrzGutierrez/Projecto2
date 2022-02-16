@@ -1,0 +1,25 @@
+
+.navbar_container{
+    display: flex;
+    justify-content: space-between;
+    border-color: black;
+    border-style: outset;
+    text-align: center;
+    background-color: yellow;
+    align-items: center;
+    } 
+
+.boruca-weather{
+color: rgb(7, 7, 7);
+}
+.navbuttons{
+    display: flex;
+    align-items: center;
+}
+.nav-button{
+   color: green;
+}
+
+    
+
+

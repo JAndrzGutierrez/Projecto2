@@ -1,11 +1,14 @@
-// App is to create all the functionalities for the child components.
+// App.js is to create all the functionalities for the child components.
 import { useState, useEffect } from "react";
 import './App.css';
-import Now from "./Now/Now";
+import NowData from "./Now/Now";
+import NavigationBar from "./NavigationBar/NavigationBar";
+import Forecast from "./Forecast/Forecast";
+// ^^ Imported Components Above ^^
 
 export default function App() {
 
-const url = "http://api.weatherapi.com/v1/forecast.json?key=bd0a47f6bab04278a31232342221102&q=auto:ip";
+const url = "http://api.weatherapi.com/v1/forecast.json?key=bd0a47f6bab04278a31232342221102&q=auto:ip&days=5&aqi=yes&alerts=yes";
 const [weatherData, setweatherData] = useState([]);
 
 // API call 
@@ -17,44 +20,65 @@ const apiCall = () => {
 }
 useEffect(() => {
   apiCall();
+  }, []);
   console.log('weatherData', weatherData)
-}, []);
+// map funtion goes here.
+const forecastdays = weatherData?.forecast?.forecastday?.map((day, index) => {
+  return(
+     <Forecast
+     key={index}
+     date={day?.date}
+     icon={day?.day?.condition?.icon}
+     maxtemp={day?.day?.maxtemp_c}
+     mintemp={day?.day?.mintemp_c}
+     sunrise={day?.astro?.sunrise}
+     sunset={day?.astro?.sunset}
+     moonphase={day?.astro?.moon_phase}
+     
+     />
+  )
+  
+});
+// weatherData.forecast.forecastdat[3].0
 
 // console.log('weather data', weatherData.current.condition.text)
 
 // code below displays in the browser.
  
-    // if (weatherData.current) {
+    if (weatherData.current) {
       return (
     <div className="App">
-      <h1>El Clima</h1>
+     <NavigationBar
+     />
+            {/* Now Component */}
+     <NowData 
+        name={weatherData.location.name} 
+        localtime={weatherData.location.localtime}
+        conditions={weatherData.current.condition.text}
+        currentTemp={weatherData.current.temp_c}
+        weatherIcon={weatherData.current.condition.icon}
+        feelsLike={weatherData.current.feelslike_c}/>
       
-      <div className="userLocation">
-        <h3>City: {weatherData.location ? weatherData.location.name : "Loading..."}</h3>
-        <h4>Local Time: {weatherData.location ? weatherData.location.localtime : "Loading..."}</h4>
-        <h4>{weatherData.current ? weatherData.current.condition.text : "Loading..."}</h4>
-      </div>
-      <div className="forecastSection">
-      <h3>Forecast:</h3>
-      </div>
-      <h3>Condition:{weatherData.current ? weatherData.current.temp_c : ""} C</h3>
-    
-    
+      {/* <h3>Condition:{weatherData.current ? weatherData.current.temp_c : ""} C</h3> */}
+      {forecastdays}
+                    <footer>
+                            Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>
+                    </footer>
     </div>
     
-  )
-  //     }else{
-  //       return(
-  //        <h2>Loading...WAIT!</h2> 
-  //       )
-  //     }
+  );
+      }else{
+        return(
+         <h2>Loading...WAIT!</h2> 
+        )
+      };
 
 
 
 
 
 
-
+// Closing Curly for
 };
 
 
