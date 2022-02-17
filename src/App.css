@@ -1,7 +1,7 @@
 .App {
   display: grid;
-  grid-template-columns: 3fr 3fr 3fr;
-  grid-template-rows: auto auto 2fr 2fr 2fr ;
+  grid-template-columns: repeat(4 auto) ;
+  grid-template-rows: repeat(6 auto);
   text-align: center;
   gap: 5px;
   margin: 5px;
@@ -13,15 +13,14 @@ nav{
 .userLocation{
   grid-column: 1 / 4 ;
   grid-row: 2 / 3;
-  
+};
+.searchLocation{
+grid-column: 1 / 4 ;
+grid-row: 3 / 4 ;
 };
 
-.Forecast{
-  grid-column: 1 / 4 ;
-  grid-row: 3 / 4;
-};
 
 footer{
   grid-column: 1 / 4;
   grid-row: 5 / 6;
-}
+};

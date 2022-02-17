@@ -1,0 +1,16 @@
+
+.searchLocation{
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+}
+.cityData{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 5px;
+    border-color: black;
+    border-style: outset;
+    text-align: center;
+    padding: 3px;
+
+}

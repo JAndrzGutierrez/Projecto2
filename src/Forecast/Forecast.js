@@ -3,6 +3,7 @@ import './Forecast.css'
 const Forecast = ({date, icon, maxtemp, mintemp, sunrise, sunset, moonphase}) => {
     
     return(
+        
         <div className='forecast_container'>
            <h3>{date}</h3>
            <img src={icon}/>
@@ -11,7 +12,8 @@ const Forecast = ({date, icon, maxtemp, mintemp, sunrise, sunset, moonphase}) =>
            <h4>Sunrise: {sunrise}</h4>
            <h4>Sunset: {sunset}</h4>
            <h4>Moon Phase: {moonphase}</h4>
-</div>
+        </div>
+       
     )
 }
 export default Forecast

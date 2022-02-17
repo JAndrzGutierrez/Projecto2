@@ -4,10 +4,22 @@ import './App.css';
 import NowData from "./Now/Now";
 import NavigationBar from "./NavigationBar/NavigationBar";
 import Forecast from "./Forecast/Forecast";
+import SearchLocation from "./SearchLocation/SearchLocation";
 // ^^ Imported Components Above ^^
 
 export default function App() {
+// search function
+const [cityData, setcityData] = useState([]);
+const [cityName, setcityName] = useState('Paris');
+const cityUrl = `http://api.weatherapi.com/v1/forecast.json?key=bd0a47f6bab04278a31232342221102&q=${cityName}&days=5&aqi=yes&alerts=yes`;
 
+const searchCall = () =>{
+  fetch(cityUrl)
+  .then((response) => response.json())
+  .then(data => setcityData(data))
+  .catch(() => console.log("search API call error."))
+}
+console.log('CityData', cityData)
 const url = "http://api.weatherapi.com/v1/forecast.json?key=bd0a47f6bab04278a31232342221102&q=auto:ip&days=5&aqi=yes&alerts=yes";
 const [weatherData, setweatherData] = useState([]);
 
@@ -20,10 +32,12 @@ const apiCall = () => {
 }
 useEffect(() => {
   apiCall();
-  }, []);
+  searchCall();
+
+  }, [cityName]);
   console.log('weatherData', weatherData)
 // map funtion goes here.
-const forecastdays = weatherData?.forecast?.forecastday?.map((day, index) => {
+const forecastDays = weatherData?.forecast?.forecastday?.map((day, index) => {
   return(
      <Forecast
      key={index}
@@ -34,22 +48,29 @@ const forecastdays = weatherData?.forecast?.forecastday?.map((day, index) => {
      sunrise={day?.astro?.sunrise}
      sunset={day?.astro?.sunset}
      moonphase={day?.astro?.moon_phase}
-     
      />
   )
-  
+  // const searchCity = 
 });
-// weatherData.forecast.forecastdat[3].0
-
-// console.log('weather data', weatherData.current.condition.text)
-
-// code below displays in the browser.
- 
     if (weatherData.current) {
       return (
     <div className="App">
      <NavigationBar
      />
+     <SearchLocation
+     setcityData={setcityData}
+     setcityName={setcityName}
+     cityData={cityData}
+     country={cityData?.location?.country}
+     cityName={cityName}
+     localtime={cityData?.location?.localtime}
+     conditionIcon={cityData?.current?.condition?.icon}
+     conditionText={cityData?.current?.condition?.text}
+     temp_c={cityData?.current?.temp_c}
+     temp_f={cityData?.current?.temp_f}
+
+      />
+    
             {/* Now Component */}
      <NowData 
         name={weatherData.location.name} 
@@ -60,7 +81,8 @@ const forecastdays = weatherData?.forecast?.forecastday?.map((day, index) => {
         feelsLike={weatherData.current.feelslike_c}/>
       
       {/* <h3>Condition:{weatherData.current ? weatherData.current.temp_c : ""} C</h3> */}
-      {forecastdays}
+      {/* FORECAST COMPONENT BELOW */}
+      {forecastDays} 
                     <footer>
                             Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>
                     </footer>
@@ -69,7 +91,7 @@ const forecastdays = weatherData?.forecast?.forecastday?.map((day, index) => {
   );
       }else{
         return(
-         <h2>Loading...WAIT!</h2> 
+         <h2>MotherFucka Wait!</h2> 
         )
       };
 
@@ -82,7 +104,14 @@ const forecastdays = weatherData?.forecast?.forecastday?.map((day, index) => {
 };
 
 
+
+// NOTES/EXAMPLES: 
+
 // Ternary Operator AKA Ternero Operator
 
 {/* <h3>Condition:{weatherData.current ? weatherData.current.temp_c : ""} Degrees</h3>
       <h3>Forecast:{weatherData.current ? weatherData.current.condition.text : ""}</h3> */}
+      // weatherData.forecast.forecastdat[3].0
+
+// console.log('weather data', weatherData.current.condition.text)
+
