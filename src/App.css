@@ -1,4 +1,11 @@
 .App {
+          /* CSS HEX */
+        --avocado: #648703ff;
+        --burnt-orange: #ba5000ff;
+        --blood-red: #630e00ff;
+        --citrine: #dcc610ff;
+        --indigo-dye: #283f59ff;
+
   display: grid;
   grid-template-columns: repeat(4 auto) ;
   grid-template-rows: repeat(6 auto);

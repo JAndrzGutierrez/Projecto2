@@ -1,16 +1,19 @@
 // App.js is to create all the functionalities for the child components.
 import { useState, useEffect } from "react";
+import { Routes, Route, Link } from "react-router-dom"
 import './App.css';
 import NowData from "./Now/Now";
 import NavigationBar from "./NavigationBar/NavigationBar";
 import Forecast from "./Forecast/Forecast";
 import SearchLocation from "./SearchLocation/SearchLocation";
+import WeatherAlerts from "./WeatherAlerts/WeatherAlerts";
+import WeatherPage from "./WeatherPage/WeatherPage";
 // ^^ Imported Components Above ^^
 
 export default function App() {
 // search function
 const [cityData, setcityData] = useState([]);
-const [cityName, setcityName] = useState('Paris');
+const [cityName, setcityName] = useState('Heredia');
 const cityUrl = `http://api.weatherapi.com/v1/forecast.json?key=bd0a47f6bab04278a31232342221102&q=${cityName}&days=5&aqi=yes&alerts=yes`;
 
 const searchCall = () =>{
@@ -55,8 +58,14 @@ const forecastDays = weatherData?.forecast?.forecastday?.map((day, index) => {
     if (weatherData.current) {
       return (
     <div className="App">
-     <NavigationBar
-     />
+      
+     <NavigationBar/>
+     <Routes>
+       <Route path="/enviromentnews"
+       element={<WeatherPage/>}>
+         
+       </Route>
+     </Routes>
      <SearchLocation
      setcityData={setcityData}
      setcityName={setcityName}
@@ -83,6 +92,12 @@ const forecastDays = weatherData?.forecast?.forecastday?.map((day, index) => {
       {/* <h3>Condition:{weatherData.current ? weatherData.current.temp_c : ""} C</h3> */}
       {/* FORECAST COMPONENT BELOW */}
       {forecastDays} 
+
+      <WeatherAlerts
+      desc= {weatherData?.alerts?.alert[0]?.desc}
+      /> 
+      
+      
                     <footer>
                             Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>
                     </footer>
@@ -91,7 +106,7 @@ const forecastDays = weatherData?.forecast?.forecastday?.map((day, index) => {
   );
       }else{
         return(
-         <h2>MotherFucka Wait!</h2> 
+         <h2>Esperate Cabrón!</h2> 
         )
       };
 

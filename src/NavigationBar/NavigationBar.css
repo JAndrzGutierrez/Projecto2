@@ -2,24 +2,13 @@
 .navbar_container{
     display: flex;
     justify-content: space-between;
-    border-color: black;
+    border-color: var(--indigo-dye);
     border-style: outset;
     text-align: center;
-    background-color: yellow;
+    background-color: var(--avocado);
     align-items: center;
-    } 
-
-.boruca-weather{
-color: rgb(7, 7, 7);
-}
-.navbuttons{
-    display: flex;
-    align-items: center;
-}
-.nav-button{
-   color: green;
-}
-
+    font-size: 25px;
+};
     
 
 
