@@ -7,7 +7,7 @@ const NavigationBar = ({}) =>{
        <h1 className='boruca-weather'> Boruca Weather</h1>
        
         <div className='navbuttons'>
-        <Link to="/homepage">
+        <Link to="/enviromentnews">
           <h3 className='nav-button'>|Home|</h3>
           </Link>
         <Link to="/aboutsection">

@@ -13,7 +13,7 @@ export default function App() {
       <NavigationBar />
       <Routes>
         <Route 
-        path="/homepage" 
+        path="/enviromentnews" 
         element={<WeatherPage/>}>
         </Route>
         <Route
