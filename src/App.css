@@ -7,27 +7,12 @@
         --indigo-dye: #283f59ff;
 
   display: grid;
-  grid-template-columns: repeat(4 auto) ;
-  grid-template-rows: repeat(6 auto);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
   text-align: center;
-  gap: 5px;
-  margin: 5px;
+  gap: 5px; 
 }
-nav{
-  grid-column: 1 / 4 ;
-  grid-row: 1 / 2;
-}
-.userLocation{
-  grid-column: 1 / 4 ;
-  grid-row: 2 / 3;
-};
-.searchLocation{
-grid-column: 1 / 4 ;
-grid-row: 3 / 4 ;
-};
 
-
-footer{
+.weatherPage{
   grid-column: 1 / 4;
-  grid-row: 5 / 6;
-};
+}

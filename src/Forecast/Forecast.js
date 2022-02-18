@@ -1,10 +1,11 @@
 import './Forecast.css'
 
-const Forecast = ({date, icon, maxtemp, mintemp, sunrise, sunset, moonphase}) => {
+const Forecast = ({date, icon, maxtemp, mintemp, sunrise, sunset, moonphase ,id}) => {
     
     return(
         
-        <div className='forecast_container'>
+        <div id={`forecastbox${id}`} className='forecast_container'>
+           
            <h3>{date}</h3>
            <img src={icon}/>
            <h3>Max Temp: {maxtemp}</h3>
@@ -13,7 +14,7 @@ const Forecast = ({date, icon, maxtemp, mintemp, sunrise, sunset, moonphase}) =>
            <h4>Sunset: {sunset}</h4>
            <h4>Moon Phase: {moonphase}</h4>
         </div>
-       
-    )
-}
+        
+    );
+};
 export default Forecast

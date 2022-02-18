@@ -4,11 +4,12 @@ const Now = ({ name, localtime, conditions, weatherIcon, feelsLike, currentTemp 
   
 return(
      <div className="userLocation">
-          <h3 className='localtime'>Local Time: {localtime}</h3>
-          <h3 className='locationName'>City: {name}</h3>
-          <h3 className='conditions'>{conditions}<img className='weatherIcon' src={weatherIcon}/></h3>
+          <h3 className='localtime'>{localtime}</h3>
+          <h3 className='locationName'>{name}</h3>
+          <h3 className='conditions'>{conditions}</h3>
+          <img className='weatherIcon' src={weatherIcon}/>
           <h2 className='currentTemp'>{currentTemp} C</h2>
-          <h3 className='feelslike'>Feels Like: {feelsLike}</h3>
+          <h2 className='feelslike'>Feels Like: {feelsLike}</h2>
      </div>
     
 )

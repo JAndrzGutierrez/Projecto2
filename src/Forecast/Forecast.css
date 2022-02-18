@@ -1,5 +1,4 @@
 .forecast_container{
-    border-style: outset;
-    grid-row: 4 / 5;
-
+    background-color: var(--indigo-dye);
+    color: whitesmoke;
 }

@@ -1,14 +1,43 @@
-
+.boruca-weather{
+    font-size: 60px;
+    color: var(--citrine);
+}
 .navbar_container{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto;
     border-color: var(--indigo-dye);
     border-style: outset;
     text-align: center;
-    background-color: var(--avocado);
+    background-color: var(--indigo-dye);
     align-items: center;
     font-size: 25px;
-};
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    }
+.navbuttons{
+   display: grid;
+   grid-template-rows: auto auto auto;
+
     
+    
+}
+.nav-button{
+    flex-direction: row;
+    font-style: italic;
+    text-decoration: none;
+    color:var(--citrine);
+   margin: 10px;
+}
+a{
+    text-decoration: none;
+}
+
+
+
+
+
 
 

@@ -1,16 +1,44 @@
-
-.searchLocation{
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
+.cityData {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  gap: 5px;
+  border-color: var(--citrine);
+  border-style: outset;
+  text-align: center;
+  background-color: var(--indigo-dye);
+  color: whitesmoke;
 }
-.cityData{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    gap: 5px;
-    border-color: black;
-    border-style: outset;
-    text-align: center;
-    padding: 3px;
-
+#location-search {
+  margin-top: 30px;
+  background-color: var(--citrine);
+  font-style: italic;
+  font-size: x-large;
+}
+button {
+  font-size: x-large;
+}
+.cityName {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.country {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+#condition-icon {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+.condition {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+}
+.temp_c {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+.temp_f {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
 }

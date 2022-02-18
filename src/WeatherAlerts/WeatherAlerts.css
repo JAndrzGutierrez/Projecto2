@@ -1,0 +1,9 @@
+.alerts-container{
+    display: grid;
+    background-color: var(--indigo-dye);
+    color: white;
+}
+.alert-description{
+    background-color: var(--indigo-dye);
+    font-size: 20px;
+}
