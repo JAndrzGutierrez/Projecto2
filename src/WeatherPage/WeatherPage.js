@@ -8,7 +8,7 @@ export default function WeatherPage() {
   // search function
   const [cityData, setcityData] = useState([]);
   const [cityName, setcityName] = useState("Heredia");
-  const cityUrl = `http://api.weatherapi.com/v1/forecast.json?key=bd0a47f6bab04278a31232342221102&q=${cityName}&days=5&aqi=yes&alerts=yes`;
+  const cityUrl = `https://api.weatherapi.com/v1/forecast.json?key=bd0a47f6bab04278a31232342221102&q=${cityName}&days=5&aqi=yes&alerts=yes`;
 
   const searchCall = () => {
     fetch(cityUrl)
@@ -18,7 +18,7 @@ export default function WeatherPage() {
   };
   console.log("CityData", cityData);
   const url =
-    "http://api.weatherapi.com/v1/forecast.json?key=bd0a47f6bab04278a31232342221102&q=auto:ip&days=5&aqi=yes&alerts=yes";
+    "https://api.weatherapi.com/v1/forecast.json?key=bd0a47f6bab04278a31232342221102&q=auto:ip&days=5&aqi=yes&alerts=yes";
   const [weatherData, setweatherData] = useState([]);
 
   // API call
@@ -94,7 +94,7 @@ export default function WeatherPage() {
       </div>
     );
   } else {
-    return <div class="hourglass"></div>;
+    return <div class="hourglass"> PLEASE WAIT!  </div>;
   }
 
   // Closing Curly for
